@@ -1,0 +1,61 @@
+<% layout('layout/boilerplate') %>
+
+
+    <div class="col">
+        <div class="col-md-6 offset-md-3">
+            <div class="card shadow">
+                <img src="https://media.istockphoto.com/id/2161795367/photo/little-river-synchronous-fireflies-elkmont-campgrounds-great-smokey-mountains.jpg?s=612x612&w=0&k=20&c=fGc1i5-Wnh43OTiBvh22rxdjGOCnPF8BqXT9I3_w-IA="
+                class="card-img-top img-fluid" style="max-height: 25rem; background-size: cover; background-position: center;">
+                <div class="card-body">
+                    <h3 class="card-title">New Campground</h3>
+                    <div class="col-8 w-100">
+                        <form action="/campgrounds" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label class="form-label" for="title">Title: </label>
+                                <input class="form-control" type="text" id="title" name="campground[title]" placeholder="Title" required>
+                                <div class="valid-feedback">
+                                    Looking good! Nice title!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="location">Location: </label>
+                                <input class="form-control" type="text" id="location" name="campground[location]" placeholder="Location" required>
+                                <div class="valid-feedback">
+                                    Looking good! Nice location!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="price">Campground Price: </label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="price">$</span>
+                                    <input type="text" class="form-control" id="price" name="campground[price]" placeholder="0.00" aria-label="price" aria-describedby="price-label" required>
+                                    <div class="valid-feedback">
+                                        Looking good! Nice price...
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="description">Description: </label>
+                                <textarea class="form-control" type="text" id="description" name="campground[description]" placeholder="Please enter a description" required></textarea>
+                                <div class="valid-feedback">
+                                    Looking good! Nice description!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="image">Image(s) upload: </label>
+                                <input type="file" class="form-control" name="image" id="image" multiple required>
+                                <div class="valid-feedback">
+                                    Looking good! Nice images!
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3 d-grid gap-2 mx-auto">
+                                <button class="btn btn-success">Add Campground</button>
+                            </div>
+                        </form>
+                        <a style="text-decoration: none;" href="/campgrounds">Back to Campgrounds</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
